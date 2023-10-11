@@ -23,6 +23,7 @@
 		CD3BEFB22AD73B780027A04C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD3BEFBA2AD73CB90027A04C /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		CD3BEFBC2AD73E120027A04C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		CD3BEFCE2AD743C10027A04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +56,9 @@
 		CD3BEFAA2AD73B720027A04C /* PersonalPeopleAPI */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFCE2AD743C10027A04C /* Info.plist */,
+				CD3BEFBF2AD73F760027A04C /* Features */,
+				CD3BEFBE2AD73F6B0027A04C /* Base */,
 				CD3BEFB92AD73C270027A04C /* Resources */,
 				CD3BEFAB2AD73B720027A04C /* PersonalPeopleAPIApp.swift */,
 				CD3BEFAD2AD73B720027A04C /* ContentView.swift */,
@@ -79,6 +83,132 @@
 				CD3BEFBC2AD73E120027A04C /* Theme.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD3BEFBE2AD73F6B0027A04C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CD3BEFBF2AD73F760027A04C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFC32AD73F910027A04C /* Settings */,
+				CD3BEFC22AD73F8B0027A04C /* Detail */,
+				CD3BEFC12AD73F860027A04C /* Create */,
+				CD3BEFC02AD73F7F0027A04C /* People */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		CD3BEFC02AD73F7F0027A04C /* People */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFC62AD73FB00027A04C /* Views */,
+				CD3BEFC52AD73FAC0027A04C /* Model */,
+				CD3BEFC42AD73FA20027A04C /* View Models */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		CD3BEFC12AD73F860027A04C /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFC92AD73FFD0027A04C /* Views */,
+				CD3BEFC82AD73FF40027A04C /* Model */,
+				CD3BEFC72AD73FEA0027A04C /* View Models */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		CD3BEFC22AD73F8B0027A04C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFCC2AD740110027A04C /* Views */,
+				CD3BEFCB2AD7400D0027A04C /* Models */,
+				CD3BEFCA2AD740060027A04C /* View Models */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CD3BEFC32AD73F910027A04C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFCD2AD740260027A04C /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CD3BEFC42AD73FA20027A04C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		CD3BEFC52AD73FAC0027A04C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD3BEFC62AD73FB00027A04C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD3BEFC72AD73FEA0027A04C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		CD3BEFC82AD73FF40027A04C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD3BEFC92AD73FFD0027A04C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD3BEFCA2AD740060027A04C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		CD3BEFCB2AD7400D0027A04C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD3BEFCC2AD740110027A04C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD3BEFCD2AD740260027A04C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +421,10 @@
 				DEVELOPMENT_TEAM = JKR3XZ5TBQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PersonalPeopleAPI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = People;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,9 +451,10 @@
 				DEVELOPMENT_TEAM = JKR3XZ5TBQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PersonalPeopleAPI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = People;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

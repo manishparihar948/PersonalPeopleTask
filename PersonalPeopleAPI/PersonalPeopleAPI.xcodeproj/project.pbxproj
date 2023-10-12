@@ -13,6 +13,13 @@
 		CD3BEFB32AD73B780027A04C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3BEFB22AD73B780027A04C /* Preview Assets.xcassets */; };
 		CD3BEFBB2AD73CB90027A04C /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFBA2AD73CB90027A04C /* Symbols.swift */; };
 		CD3BEFBD2AD73E120027A04C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFBC2AD73E120027A04C /* Theme.swift */; };
+		CD3BEFD32AD7FAB10027A04C /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = CD3BEFD22AD7FAB10027A04C /* SingleUserData.json */; };
+		CD3BEFD72AD7FBE70027A04C /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFD62AD7FBE70027A04C /* UserDetailResponse.swift */; };
+		CD3BEFD92AD7FC690027A04C /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFD82AD7FC690027A04C /* UsersResponse.swift */; };
+		CD3BEFDC2AD7FD140027A04C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFDB2AD7FD140027A04C /* Models.swift */; };
+		CD3BEFDF2AD7FD670027A04C /* StaticJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFDE2AD7FD670027A04C /* StaticJSONMapper.swift */; };
+		CD3BEFE12AD8057B0027A04C /* UsersStaticData.json in Resources */ = {isa = PBXBuildFile; fileRef = CD3BEFE02AD8057B0027A04C /* UsersStaticData.json */; };
+		CD3BEFE32AD8170B0027A04C /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFE22AD8170B0027A04C /* PeopleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		CD3BEFBA2AD73CB90027A04C /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		CD3BEFBC2AD73E120027A04C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CD3BEFCE2AD743C10027A04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CD3BEFD22AD7FAB10027A04C /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
+		CD3BEFD62AD7FBE70027A04C /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
+		CD3BEFD82AD7FC690027A04C /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
+		CD3BEFDB2AD7FD140027A04C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		CD3BEFDE2AD7FD670027A04C /* StaticJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticJSONMapper.swift; sourceTree = "<group>"; };
+		CD3BEFE02AD8057B0027A04C /* UsersStaticData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UsersStaticData.json; sourceTree = "<group>"; };
+		CD3BEFE22AD8170B0027A04C /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 		CD3BEFB92AD73C270027A04C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFCF2AD7F9360027A04C /* JSON */,
 				CD3BEFBA2AD73CB90027A04C /* Symbols.swift */,
 				CD3BEFBC2AD73E120027A04C /* Theme.swift */,
 			);
@@ -88,6 +103,8 @@
 		CD3BEFBE2AD73F6B0027A04C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFDD2AD7FD560027A04C /* Mapper */,
+				CD3BEFDA2AD7FD030027A04C /* Model */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -151,6 +168,7 @@
 		CD3BEFC52AD73FAC0027A04C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFD82AD7FC690027A04C /* UsersResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +176,7 @@
 		CD3BEFC62AD73FB00027A04C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFE22AD8170B0027A04C /* PeopleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +212,7 @@
 		CD3BEFCB2AD7400D0027A04C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFD62AD7FBE70027A04C /* UserDetailResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +229,31 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD3BEFCF2AD7F9360027A04C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFE02AD8057B0027A04C /* UsersStaticData.json */,
+				CD3BEFD22AD7FAB10027A04C /* SingleUserData.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		CD3BEFDA2AD7FD030027A04C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFDB2AD7FD140027A04C /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD3BEFDD2AD7FD560027A04C /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFDE2AD7FD670027A04C /* StaticJSONMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +314,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3BEFE12AD8057B0027A04C /* UsersStaticData.json in Resources */,
 				CD3BEFB32AD73B780027A04C /* Preview Assets.xcassets in Resources */,
+				CD3BEFD32AD7FAB10027A04C /* SingleUserData.json in Resources */,
 				CD3BEFB02AD73B780027A04C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,10 +328,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3BEFDF2AD7FD670027A04C /* StaticJSONMapper.swift in Sources */,
 				CD3BEFBB2AD73CB90027A04C /* Symbols.swift in Sources */,
+				CD3BEFE32AD8170B0027A04C /* PeopleView.swift in Sources */,
 				CD3BEFBD2AD73E120027A04C /* Theme.swift in Sources */,
 				CD3BEFAE2AD73B720027A04C /* ContentView.swift in Sources */,
+				CD3BEFD72AD7FBE70027A04C /* UserDetailResponse.swift in Sources */,
 				CD3BEFAC2AD73B720027A04C /* PersonalPeopleAPIApp.swift in Sources */,
+				CD3BEFD92AD7FC690027A04C /* UsersResponse.swift in Sources */,
+				CD3BEFDC2AD7FD140027A04C /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

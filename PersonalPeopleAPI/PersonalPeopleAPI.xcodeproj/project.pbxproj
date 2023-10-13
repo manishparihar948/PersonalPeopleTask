@@ -25,6 +25,7 @@
 		CD3BEFEA2AD83A6B0027A04C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFE92AD83A6A0027A04C /* DetailView.swift */; };
 		CD3BEFEC2AD9554A0027A04C /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFEB2AD9554A0027A04C /* CreateView.swift */; };
 		CD3BEFEF2AD95C1A0027A04C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */; };
+		CD3BEFF12AD965B00027A04C /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF02AD965B00027A04C /* PeopleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CD3BEFE92AD83A6A0027A04C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CD3BEFEB2AD9554A0027A04C /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		CD3BEFF02AD965B00027A04C /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		CD3BEFC42AD73FA20027A04C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFF02AD965B00027A04C /* PeopleViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				CD3BEFD92AD7FC690027A04C /* UsersResponse.swift in Sources */,
 				CD3BEFE52AD81D8C0027A04C /* PersonItemView.swift in Sources */,
 				CD3BEFDC2AD7FD140027A04C /* Models.swift in Sources */,
+				CD3BEFF12AD965B00027A04C /* PeopleViewModel.swift in Sources */,
 				CD3BEFEF2AD95C1A0027A04C /* NetworkingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

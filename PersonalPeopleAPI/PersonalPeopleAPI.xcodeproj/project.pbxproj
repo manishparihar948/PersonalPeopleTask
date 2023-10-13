@@ -23,6 +23,7 @@
 		CD3BEFE52AD81D8C0027A04C /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFE42AD81D8C0027A04C /* PersonItemView.swift */; };
 		CD3BEFE82AD81E890027A04C /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFE72AD81E890027A04C /* PillView.swift */; };
 		CD3BEFEA2AD83A6B0027A04C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFE92AD83A6A0027A04C /* DetailView.swift */; };
+		CD3BEFEC2AD9554A0027A04C /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFEB2AD9554A0027A04C /* CreateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CD3BEFE42AD81D8C0027A04C /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
 		CD3BEFE72AD81E890027A04C /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
 		CD3BEFE92AD83A6A0027A04C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CD3BEFEB2AD9554A0027A04C /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +121,10 @@
 		CD3BEFBF2AD73F760027A04C /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				CD3BEFC32AD73F910027A04C /* Settings */,
-				CD3BEFC22AD73F8B0027A04C /* Detail */,
-				CD3BEFC12AD73F860027A04C /* Create */,
 				CD3BEFC02AD73F7F0027A04C /* People */,
+				CD3BEFC22AD73F8B0027A04C /* Detail */,
+				CD3BEFC32AD73F910027A04C /* Settings */,
+				CD3BEFC12AD73F860027A04C /* Create */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -150,8 +152,8 @@
 		CD3BEFC22AD73F8B0027A04C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFCB2AD7400D0027A04C /* Model */,
 				CD3BEFCC2AD740110027A04C /* Views */,
-				CD3BEFCB2AD7400D0027A04C /* Models */,
 				CD3BEFCA2AD740060027A04C /* View Models */,
 			);
 			path = Detail;
@@ -206,6 +208,7 @@
 		CD3BEFC92AD73FFD0027A04C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFEB2AD9554A0027A04C /* CreateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,12 +220,12 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
-		CD3BEFCB2AD7400D0027A04C /* Models */ = {
+		CD3BEFCB2AD7400D0027A04C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CD3BEFD62AD7FBE70027A04C /* UserDetailResponse.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CD3BEFCC2AD740110027A04C /* Views */ = {
@@ -353,6 +356,7 @@
 				CD3BEFAE2AD73B720027A04C /* ContentView.swift in Sources */,
 				CD3BEFD72AD7FBE70027A04C /* UserDetailResponse.swift in Sources */,
 				CD3BEFE82AD81E890027A04C /* PillView.swift in Sources */,
+				CD3BEFEC2AD9554A0027A04C /* CreateView.swift in Sources */,
 				CD3BEFAC2AD73B720027A04C /* PersonalPeopleAPIApp.swift in Sources */,
 				CD3BEFD92AD7FC690027A04C /* UsersResponse.swift in Sources */,
 				CD3BEFE52AD81D8C0027A04C /* PersonItemView.swift in Sources */,

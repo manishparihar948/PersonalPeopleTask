@@ -12,6 +12,7 @@ struct PeopleView: View {
     private let columns = Array(repeating: GridItem(.flexible()), count: 2)
     
     @State private var users: [User] = []
+    @State private var shouldShowCreate = false
     
     var body: some View {
         NavigationStack {
@@ -21,7 +22,11 @@ struct PeopleView: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(users, id:\.id) { item in
-                            PersonItemView(user: item)
+                            NavigationLink{
+                                DetailView()
+                            } label: {
+                                PersonItemView(user: item)
+                            }
                         }
                     }
                     .padding()
@@ -42,6 +47,9 @@ struct PeopleView: View {
                     print(error)
                 }
             }
+            .sheet(isPresented: $shouldShowCreate, content: {
+                CreateView()
+            })
         }
     }
 }
@@ -60,7 +68,7 @@ private extension PeopleView {
     
     var create: some View {
         Button {
-            
+            shouldShowCreate.toggle()
         } label: {
             Symbols.plus
                 .font(

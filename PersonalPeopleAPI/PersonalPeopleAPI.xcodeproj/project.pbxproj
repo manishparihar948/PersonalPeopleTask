@@ -24,6 +24,7 @@
 		CD3BEFE82AD81E890027A04C /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFE72AD81E890027A04C /* PillView.swift */; };
 		CD3BEFEA2AD83A6B0027A04C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFE92AD83A6A0027A04C /* DetailView.swift */; };
 		CD3BEFEC2AD9554A0027A04C /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFEB2AD9554A0027A04C /* CreateView.swift */; };
+		CD3BEFEF2AD95C1A0027A04C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CD3BEFE72AD81E890027A04C /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
 		CD3BEFE92AD83A6A0027A04C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CD3BEFEB2AD9554A0027A04C /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		CD3BEFBE2AD73F6B0027A04C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFED2AD95C000027A04C /* API */,
 				CD3BEFE62AD81E760027A04C /* Views */,
 				CD3BEFDD2AD7FD560027A04C /* Mapper */,
 				CD3BEFDA2AD7FD030027A04C /* Model */,
@@ -132,8 +135,8 @@
 		CD3BEFC02AD73F7F0027A04C /* People */ = {
 			isa = PBXGroup;
 			children = (
-				CD3BEFC62AD73FB00027A04C /* Views */,
 				CD3BEFC52AD73FAC0027A04C /* Model */,
+				CD3BEFC62AD73FB00027A04C /* Views */,
 				CD3BEFC42AD73FA20027A04C /* View Models */,
 			);
 			path = People;
@@ -142,8 +145,8 @@
 		CD3BEFC12AD73F860027A04C /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				CD3BEFC92AD73FFD0027A04C /* Views */,
 				CD3BEFC82AD73FF40027A04C /* Model */,
+				CD3BEFC92AD73FFD0027A04C /* Views */,
 				CD3BEFC72AD73FEA0027A04C /* View Models */,
 			);
 			path = Create;
@@ -276,6 +279,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CD3BEFED2AD95C000027A04C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -361,6 +372,7 @@
 				CD3BEFD92AD7FC690027A04C /* UsersResponse.swift in Sources */,
 				CD3BEFE52AD81D8C0027A04C /* PersonItemView.swift in Sources */,
 				CD3BEFDC2AD7FD140027A04C /* Models.swift in Sources */,
+				CD3BEFEF2AD95C1A0027A04C /* NetworkingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

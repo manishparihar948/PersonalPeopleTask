@@ -35,7 +35,7 @@ final class CreateViewModel: ObservableObject {
             
             NetworkingManager
                 .shared
-                .request(methodType: .POST(data: data), "https://reqres.in/api/users?delay=3") { [weak self] res in
+                .request(.create(submissionData: data)){ [weak self] res in
                     // Result get from the service on to the main thread in UI
                     DispatchQueue.main.async {
                         switch res {

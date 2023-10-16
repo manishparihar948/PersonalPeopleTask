@@ -17,7 +17,7 @@ final class PeopleViewModel: ObservableObject {
     
     func fetchUsers() {
         isLoading = true
-        NetworkingManager.shared.request("https://reqres.in/api/users?delay=",
+        NetworkingManager.shared.request(.people,
                                          type: UsersResponse.self) { [weak self] res in
             // Added DispatchQueue to call api data on background thread if we keep all the api call on main thread their might be chance of application may get crash which is inside the closure
             DispatchQueue.main.async {

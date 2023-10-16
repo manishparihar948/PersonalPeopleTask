@@ -16,12 +16,11 @@ final class NetworkingManager {
     
     // Make generic constraint so make request with Type T and Codable
     // We want to actually pass in a type so we allow someone to say the model that they want to map it to within the request function so we are going to say type and want that type to be T.type
-    func request<T: Codable>(methodType: MethodType = .GET,
-                             _ absoluteURL: String,
+    func request<T: Codable>(_ endpoint: Endpoint,
                              type: T.Type,
                              completion: @escaping (Result<T, Error>) -> Void) {
         
-        guard let url = URL(string: absoluteURL) else {
+        guard let url = endpoint.url else {
             completion(.failure(NetworkingError.invalidUrl))
             return //Return here to make sure that you actually stop execution after your call your completion handler like so
         }
@@ -29,7 +28,7 @@ final class NetworkingManager {
         // change from let to var to make the request
         // var request = URLRequest(url: url)
         // Change again because we have created another extension below
-        let request = buildRequest(from: url, methodType: methodType)
+        let request = buildRequest(from: url, methodType: endpoint.methodType)
         
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
             
@@ -66,15 +65,14 @@ final class NetworkingManager {
     // POST Request - 
     // method overloading two funtions name is same but behave differently
     // Here we don not want return from this function
-    func request(methodType: MethodType = .GET,
-                 _ absoluteURL: String,
+    func request(_ endpoint: Endpoint,
                  completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let url = URL(string: absoluteURL) else {
+        guard let url = endpoint.url else {
             completion(.failure(NetworkingError.invalidUrl))
             return //Return here to make sure that you actually stop execution after your call your completion handler like so
         }
         
-        let request = buildRequest(from: url, methodType: methodType)
+        let request = buildRequest(from: url, methodType: endpoint.methodType)
         
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
             
@@ -122,18 +120,10 @@ extension NetworkingManager.NetworkingError {
     }
 }
 
-// For GET and POST Method
-extension NetworkingManager {
-    enum MethodType {
-        case GET
-        case POST(data: Data?) // Optional:  In case we dont wanna send data
-    }
-}
-
 // i dont want to expose the extension to access outside this network manager
 private extension NetworkingManager {
     func buildRequest(from url:URL,
-                      methodType: MethodType) -> URLRequest {
+                      methodType: Endpoint.MethodType) -> URLRequest {
         var request = URLRequest(url:url)
         
         switch methodType {

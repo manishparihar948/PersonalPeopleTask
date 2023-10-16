@@ -34,6 +34,7 @@
 		CD3BEFFF2ADDDBC50027A04C /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFFE2ADDDBC50027A04C /* HapticsManager.swift */; };
 		CD3BF0012ADDDF570027A04C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0002ADDDF570027A04C /* SettingsView.swift */; };
 		CD3BF0042ADDE1140027A04C /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */; };
+		CD3BF0062ADDE2A90027A04C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0052ADDE2A80027A04C /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		CD3BEFFE2ADDDBC50027A04C /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		CD3BF0002ADDDF570027A04C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		CD3BF0052ADDE2A80027A04C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */,
+				CD3BF0052ADDE2A80027A04C /* Endpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				CD3BEFF72ADD26B80027A04C /* CreateViewModel.swift in Sources */,
 				CD3BEFAE2AD73B720027A04C /* ContentView.swift in Sources */,
 				CD3BEFFF2ADDDBC50027A04C /* HapticsManager.swift in Sources */,
+				CD3BF0062ADDE2A90027A04C /* Endpoint.swift in Sources */,
 				CD3BEFD72AD7FBE70027A04C /* UserDetailResponse.swift in Sources */,
 				CD3BEFE82AD81E890027A04C /* PillView.swift in Sources */,
 				CD3BEFEC2AD9554A0027A04C /* CreateView.swift in Sources */,

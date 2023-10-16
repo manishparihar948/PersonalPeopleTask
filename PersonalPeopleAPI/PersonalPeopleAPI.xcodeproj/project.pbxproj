@@ -30,6 +30,7 @@
 		CD3BEFF52ADD26500027A04C /* NewPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF42ADD26500027A04C /* NewPerson.swift */; };
 		CD3BEFF72ADD26B80027A04C /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF62ADD26B80027A04C /* CreateViewModel.swift */; };
 		CD3BEFF92ADD42BD0027A04C /* CheckmarkPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF82ADD42BD0027A04C /* CheckmarkPopoverView.swift */; };
+		CD3BEFFC2ADDD3350027A04C /* CreateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFFB2ADDD3340027A04C /* CreateValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		CD3BEFF42ADD26500027A04C /* NewPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPerson.swift; sourceTree = "<group>"; };
 		CD3BEFF62ADD26B80027A04C /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		CD3BEFF82ADD42BD0027A04C /* CheckmarkPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkPopoverView.swift; sourceTree = "<group>"; };
+		CD3BEFFB2ADDD3340027A04C /* CreateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		CD3BEFC12AD73F860027A04C /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFFA2ADDD31C0027A04C /* Validator */,
 				CD3BEFC82AD73FF40027A04C /* Model */,
 				CD3BEFC92AD73FFD0027A04C /* Views */,
 				CD3BEFC72AD73FEA0027A04C /* View Models */,
@@ -302,6 +305,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		CD3BEFFA2ADDD31C0027A04C /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFFB2ADDD3340027A04C /* CreateValidator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,6 +387,7 @@
 			files = (
 				CD3BEFDF2AD7FD670027A04C /* StaticJSONMapper.swift in Sources */,
 				CD3BEFEA2AD83A6B0027A04C /* DetailView.swift in Sources */,
+				CD3BEFFC2ADDD3350027A04C /* CreateValidator.swift in Sources */,
 				CD3BEFBB2AD73CB90027A04C /* Symbols.swift in Sources */,
 				CD3BEFE32AD8170B0027A04C /* PeopleView.swift in Sources */,
 				CD3BEFBD2AD73E120027A04C /* Theme.swift in Sources */,

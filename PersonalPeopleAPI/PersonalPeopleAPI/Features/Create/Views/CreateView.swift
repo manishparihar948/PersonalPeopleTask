@@ -11,15 +11,25 @@ struct CreateView: View {
     
     // Done button Dismiss
     @Environment(\.dismiss) var dismiss
+    @FocusState private var focusedField: Field? // to make textfield not active
     @StateObject private var vm = CreateViewModel()
     let successfulAction: () -> Void // Create closure
     
     var body: some View {
         NavigationStack {
             Form {
-                firstname
-                lastname
-                job
+                
+                Section {
+                    firstname
+                    lastname
+                    job
+                } footer: {
+                    if case .validation(let err) = vm.error,
+                       let errorDesc = err.errorDescription {
+                        Text(errorDesc)
+                            .foregroundStyle(.red)
+                    }
+                }
                 
                 Section {
                     submit
@@ -51,6 +61,14 @@ struct CreateView: View {
     }
 }
 
+extension CreateView {
+    enum Field: Hashable {
+        case firstName
+        case lastName
+        case job
+    }
+}
+
 #Preview {
     CreateView {}
 }
@@ -65,19 +83,24 @@ private extension CreateView {
     
     var firstname: some View {
         TextField("First Name",text: $vm.person.firstName)
+            .focused($focusedField, equals: .firstName)
     }
     
     var lastname: some View {
         TextField("Last Name",text: $vm.person.lastName)
+            .focused($focusedField, equals: .lastName)
+
     }
     
     var job: some View {
         TextField("Job",text: $vm.person.job)
+            .focused($focusedField, equals: .job)
+
     }
     
     var submit: some View {
         Button("Submit") {
-            // TODO: Handle action
+            focusedField = nil // resign textfield above create function , resolve removing in log also
             vm.create()
         }
     }

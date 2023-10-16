@@ -10,27 +10,31 @@ import SwiftUI
 struct DetailView: View {
     let userId: Int
     @StateObject private var vm = DetailViewModel()
-
+    
     var body: some View {
         ZStack {
             background
             
-            ScrollView {
-                VStack(alignment:.leading, spacing:18) {
-                    
-                    avatar
-                    
-                    Group {
-                        general
-                        link
+            if vm.isLoading {
+                ProgressView()
+            } else {
+                ScrollView {
+                    VStack(alignment:.leading, spacing:18) {
+                        
+                        avatar
+                        
+                        Group {
+                            general
+                            link
+                        }
+                        .padding(.horizontal,8)
+                        .padding(.vertical, 18)
+                        .background(Theme.detailBackground,
+                                    in: RoundedRectangle(cornerRadius: 16,
+                                                         style: .continuous))
                     }
-                    .padding(.horizontal,8)
-                    .padding(.vertical, 18)
-                    .background(Theme.detailBackground,
-                                in: RoundedRectangle(cornerRadius: 16,
-                                                     style: .continuous))
+                    .padding()
                 }
-                .padding()
             }
         }
         .navigationTitle("Details") // If not able to see then add Navigation Stack in Preview
@@ -43,12 +47,12 @@ struct DetailView: View {
 }
 
 /*
-#Preview {
-    NavigationStack {
-        DetailView()
-    }
-}
-*/
+ #Preview {
+ NavigationStack {
+ DetailView()
+ }
+ }
+ */
 
 struct DetailView_Previews: PreviewProvider {
     private static var previewUserId: Int {

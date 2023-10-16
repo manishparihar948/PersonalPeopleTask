@@ -48,6 +48,8 @@ struct PeopleView: View {
             }
             .sheet(isPresented: $shouldShowCreate){
                 CreateView {
+                    // For vibrate 
+                    haptic(.success)
                     // Start here animation view
                     withAnimation(.spring().delay(0.25)){
                         self.shouldShowSuccess.toggle()

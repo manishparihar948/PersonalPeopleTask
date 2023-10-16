@@ -31,6 +31,9 @@
 		CD3BEFF72ADD26B80027A04C /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF62ADD26B80027A04C /* CreateViewModel.swift */; };
 		CD3BEFF92ADD42BD0027A04C /* CheckmarkPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF82ADD42BD0027A04C /* CheckmarkPopoverView.swift */; };
 		CD3BEFFC2ADDD3350027A04C /* CreateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFFB2ADDD3340027A04C /* CreateValidator.swift */; };
+		CD3BEFFF2ADDDBC50027A04C /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFFE2ADDDBC50027A04C /* HapticsManager.swift */; };
+		CD3BF0012ADDDF570027A04C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0002ADDDF570027A04C /* SettingsView.swift */; };
+		CD3BF0042ADDE1140027A04C /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		CD3BEFF62ADD26B80027A04C /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		CD3BEFF82ADD42BD0027A04C /* CheckmarkPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkPopoverView.swift; sourceTree = "<group>"; };
 		CD3BEFFB2ADDD3340027A04C /* CreateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateValidator.swift; sourceTree = "<group>"; };
+		CD3BEFFE2ADDDBC50027A04C /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		CD3BF0002ADDDF570027A04C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,8 @@
 		CD3BEFBE2AD73F6B0027A04C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BF0022ADDE0EB0027A04C /* UserDefaults */,
+				CD3BEFFD2ADDDBB00027A04C /* Haptics */,
 				CD3BEFED2AD95C000027A04C /* API */,
 				CD3BEFE62AD81E760027A04C /* Views */,
 				CD3BEFDD2AD7FD560027A04C /* Mapper */,
@@ -259,6 +267,7 @@
 		CD3BEFCD2AD740260027A04C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BF0002ADDDF570027A04C /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +320,22 @@
 				CD3BEFFB2ADDD3340027A04C /* CreateValidator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		CD3BEFFD2ADDDBB00027A04C /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BEFFE2ADDDBC50027A04C /* HapticsManager.swift */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		CD3BF0022ADDE0EB0027A04C /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,10 +419,12 @@
 				CD3BEFF52ADD26500027A04C /* NewPerson.swift in Sources */,
 				CD3BEFF72ADD26B80027A04C /* CreateViewModel.swift in Sources */,
 				CD3BEFAE2AD73B720027A04C /* ContentView.swift in Sources */,
+				CD3BEFFF2ADDDBC50027A04C /* HapticsManager.swift in Sources */,
 				CD3BEFD72AD7FBE70027A04C /* UserDetailResponse.swift in Sources */,
 				CD3BEFE82AD81E890027A04C /* PillView.swift in Sources */,
 				CD3BEFEC2AD9554A0027A04C /* CreateView.swift in Sources */,
 				CD3BEFAC2AD73B720027A04C /* PersonalPeopleAPIApp.swift in Sources */,
+				CD3BF0042ADDE1140027A04C /* UserDefaultsKeys.swift in Sources */,
 				CD3BEFD92AD7FC690027A04C /* UsersResponse.swift in Sources */,
 				CD3BEFE52AD81D8C0027A04C /* PersonItemView.swift in Sources */,
 				CD3BEFDC2AD7FD140027A04C /* Models.swift in Sources */,
@@ -405,6 +432,7 @@
 				CD3BEFEF2AD95C1A0027A04C /* NetworkingManager.swift in Sources */,
 				CD3BEFF92ADD42BD0027A04C /* CheckmarkPopoverView.swift in Sources */,
 				CD3BEFF32AD96C000027A04C /* DetailViewModel.swift in Sources */,
+				CD3BF0012ADDDF570027A04C /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,9 @@ final class CreateViewModel: ObservableObject {
     // want the view to be able to make changes to this property
     // via a binding
     @Published var person = NewPerson()
-    
     @Published private(set) var state: SubmissionState?
+    @Published private(set) var error: NetworkingManager.NetworkingError?
+    @Published var hasError = false
     
     func create() {
         let encoder = JSONEncoder()
@@ -29,8 +30,10 @@ final class CreateViewModel: ObservableObject {
                     switch res {
                     case .success:
                         self?.state = .successful
-                    case .failure(let err):
+                    case .failure(let error):
                         self?.state = .unsuccessful
+                        self?.hasError = true
+                        self?.error = error as? NetworkingManager.NetworkingError
                     }
                 }
             }

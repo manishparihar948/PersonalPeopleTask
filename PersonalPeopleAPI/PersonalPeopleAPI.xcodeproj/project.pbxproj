@@ -27,6 +27,8 @@
 		CD3BEFEF2AD95C1A0027A04C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */; };
 		CD3BEFF12AD965B00027A04C /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF02AD965B00027A04C /* PeopleViewModel.swift */; };
 		CD3BEFF32AD96C000027A04C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF22AD96C000027A04C /* DetailViewModel.swift */; };
+		CD3BEFF52ADD26500027A04C /* NewPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF42ADD26500027A04C /* NewPerson.swift */; };
+		CD3BEFF72ADD26B80027A04C /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFF62ADD26B80027A04C /* CreateViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		CD3BEFEE2AD95C1A0027A04C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		CD3BEFF02AD965B00027A04C /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		CD3BEFF22AD96C000027A04C /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		CD3BEFF42ADD26500027A04C /* NewPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPerson.swift; sourceTree = "<group>"; };
+		CD3BEFF62ADD26B80027A04C /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		CD3BEFC72AD73FEA0027A04C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFF62ADD26B80027A04C /* CreateViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 		CD3BEFC82AD73FF40027A04C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BEFF42ADD26500027A04C /* NewPerson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +376,8 @@
 				CD3BEFBB2AD73CB90027A04C /* Symbols.swift in Sources */,
 				CD3BEFE32AD8170B0027A04C /* PeopleView.swift in Sources */,
 				CD3BEFBD2AD73E120027A04C /* Theme.swift in Sources */,
+				CD3BEFF52ADD26500027A04C /* NewPerson.swift in Sources */,
+				CD3BEFF72ADD26B80027A04C /* CreateViewModel.swift in Sources */,
 				CD3BEFAE2AD73B720027A04C /* ContentView.swift in Sources */,
 				CD3BEFD72AD7FBE70027A04C /* UserDetailResponse.swift in Sources */,
 				CD3BEFE82AD81E890027A04C /* PillView.swift in Sources */,

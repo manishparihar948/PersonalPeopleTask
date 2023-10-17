@@ -14,82 +14,66 @@ final class NetworkingManager {
     
     private init() {}
     
+    /*
+        Refactor the code in NetworkManager to make our code easier,And for this use Swift Concurrency
+        For that first remove closure
+        And make asynchronous,throws an error so mark with throws
+        
+     */
     // Make generic constraint so make request with Type T and Codable
     // We want to actually pass in a type so we allow someone to say the model that they want to map it to within the request function so we are going to say type and want that type to be T.type
     func request<T: Codable>(_ endpoint: Endpoint,
-                             type: T.Type,
-                             completion: @escaping (Result<T, Error>) -> Void) {
-        
+                             type: T.Type) async throws -> T {
+
+        // 1. Check if endpoint are valid
         guard let url = endpoint.url else {
-            completion(.failure(NetworkingError.invalidUrl))
-            return //Return here to make sure that you actually stop execution after your call your completion handler like so
+            throw NetworkingError.invalidUrl
         }
         
-        // change from let to var to make the request
-        // var request = URLRequest(url: url)
-        // Change again because we have created another extension below
+        // 2. Build Request
         let request = buildRequest(from: url, methodType: endpoint.methodType)
+       
+        // 3. Try and execute a fetch request and await a value
+        /*
+        // what we telling our system that we want to try so this funtion throw an error so we try to fetch some data and
+        //we are going to await the value so this (it tells the system that something asynchronous is about to happen and
+        //it will actually suspend and wait for it to finish)
+        */
+        let (data, response) = try await URLSession.shared.data(for: request)
         
-        let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            if error != nil {
-                completion(.failure(NetworkingError.custom(error: error!)))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse,
-                  (200...300) ~= response.statusCode else {
-                let statusCode = (response as! HTTPURLResponse).statusCode
-                completion(.failure(NetworkingError.invalidStatusCode(statusCode: statusCode)))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(NetworkingError.invalidData))
-                return
-            }
-            
-            do{
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let res = try decoder.decode(T.self, from:data)
-                completion(.success(res))
-            } catch {
-                completion(.failure(NetworkingError.failedToDecode(error: error)))
-            }
+        // 4. We access the response to check if its within a valid status code if isnt we going to throw an error
+        guard let response = response as? HTTPURLResponse,
+              (200...300) ~= response.statusCode else {
+            let statusCode = (response as! HTTPURLResponse).statusCode
+            throw NetworkingError.invalidStatusCode(statusCode: statusCode)
         }
         
-        dataTask.resume() // We need to resume it if not then its going to execute the request where it actually fetches the data so what will happen is that you wont actually see your request being made so you need to make sure that you call resume on your urlsession data task
+        // 5. Try to decode objects using the json decoder
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let res = try decoder.decode(T.self, from:data)
+        
+        // 6. If everything goods we return the value orelse we throw the error from the above point number 5 function
+        return res // we want return from this funtion thatswhy we use T
     }
     
     // POST Request - 
     // method overloading two funtions name is same but behave differently
     // Here we don not want return from this function
-    func request(_ endpoint: Endpoint,
-                 completion: @escaping (Result<Void, Error>) -> Void) {
+    func request(_ endpoint: Endpoint) async throws  {
         guard let url = endpoint.url else {
-            completion(.failure(NetworkingError.invalidUrl))
-            return //Return here to make sure that you actually stop execution after your call your completion handler like so
+            throw NetworkingError.invalidUrl
         }
         
         let request = buildRequest(from: url, methodType: endpoint.methodType)
         
-        let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            if error != nil {
-                completion(.failure(NetworkingError.custom(error: error!)))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse,
-                  (200...300) ~= response.statusCode else {
-                let statusCode = (response as! HTTPURLResponse).statusCode
-                completion(.failure(NetworkingError.invalidStatusCode(statusCode: statusCode)))
-                return
-            }
-            completion(.success(()))
+        let (_, response) = try await URLSession.shared.data(for: request)
+        
+        guard let response = response as? HTTPURLResponse,
+              (200...300) ~= response.statusCode else {
+            let statusCode = (response as! HTTPURLResponse).statusCode
+            throw NetworkingError.invalidStatusCode(statusCode: statusCode)
         }
-        dataTask.resume()
     }
 }
 

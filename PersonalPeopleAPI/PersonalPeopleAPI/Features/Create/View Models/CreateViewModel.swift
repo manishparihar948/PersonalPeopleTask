@@ -20,41 +20,37 @@ final class CreateViewModel: ObservableObject {
     // Create instance of createvalidator
     private let validator = CreateValidator()
     
-    func create() {
+    @MainActor
+    func create() async {
         
+        // 1.  Validation to validate
         do {
-            //after validate
             try validator.validate(person)
-            
-            // current state of data
+        // 2. state telling view that we are submitting some data
             state = .submitting
-            
+        // 3. Encode the data someone has input inthe form into some kind of data that we can send within our network request
             let encoder = JSONEncoder()
+        // 4. JSONN Encoder help to convert our new person from some codable to some data so we can associate this with the api request that we send to the service
             encoder.keyEncodingStrategy = .convertToSnakeCase
-            let data = try? encoder.encode(person)
+            let data = try encoder.encode(person)
+        // 5. Try to send the data, we dont want function where it actually tries to decode some kind of object when you make a network request instead of that we use alternative function we have in our network manager class that simple execute the request and froze an error if something goes wrong so
+            try await NetworkingManager.shared.request(.create(submissionData: data))
+        // 6. finally set the state to be successful
+            state = .successful
             
-            NetworkingManager
-                .shared
-                .request(.create(submissionData: data)){ [weak self] res in
-                    // Result get from the service on to the main thread in UI
-                    DispatchQueue.main.async {
-                        switch res {
-                        case .success:
-                            self?.state = .successful
-                        case .failure(let err):
-                            self?.state = .unsuccessful
-                            self?.hasError = true
-                            if let networkingError = err as? NetworkingManager.NetworkingError {
-                                self?.error = .networking(error: networkingError )
-                            }
-                        }
-                    }
-                }
-            
-        } catch {
+        } catch  {
+        // 7. Handling error if anything goes wrong
             self.hasError = true
-            if let validationError = error as? CreateValidator.CreateValidatorError {
-                self.error = .validation(error: validationError)
+            self.state = .unsuccessful
+
+        // 8.  Switch on the error and type of error
+            switch error {
+            case is NetworkingManager.NetworkingError:
+                self.error = .networking(error: error as! NetworkingManager.NetworkingError)
+            case is CreateValidator.CreateValidatorError:
+                self.error = .validation(error: error as! CreateValidator.CreateValidatorError)
+            default:
+                self.error = .system(error: error)
             }
         }
     }
@@ -72,6 +68,7 @@ extension CreateViewModel {
     enum FormError: LocalizedError {
         case networking(error: LocalizedError)
         case validation(error: LocalizedError)
+        case system(error: Error)
     }
 }
 
@@ -82,6 +79,8 @@ extension CreateViewModel.FormError {
         case .networking(let err),
              .validation(let err):
             return err.errorDescription
+        case .system(let err):
+            return err.localizedDescription
         }
     }
 }

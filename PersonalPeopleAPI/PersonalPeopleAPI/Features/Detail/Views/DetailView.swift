@@ -38,8 +38,8 @@ struct DetailView: View {
             }
         }
         .navigationTitle("Details") // If not able to see then add Navigation Stack in Preview
-        .onAppear {
-            vm.fetchDetails(for: userId)
+        .task {
+           await vm.fetchDetails(for: userId)
         }
         .alert(isPresented: $vm.hasError,
                error: vm.error) { }

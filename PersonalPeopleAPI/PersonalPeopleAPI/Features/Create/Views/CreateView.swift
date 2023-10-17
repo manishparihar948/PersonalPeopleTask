@@ -101,7 +101,10 @@ private extension CreateView {
     var submit: some View {
         Button("Submit") {
             focusedField = nil // resign textfield above create function , resolve removing in log also
-            vm.create()
+            Task {
+                await vm.create()
+
+            }
         }
     }
 }

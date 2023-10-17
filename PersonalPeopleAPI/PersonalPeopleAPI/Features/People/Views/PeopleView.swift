@@ -43,8 +43,12 @@ struct PeopleView: View {
                     create
                 }
             }
-            .onAppear {
-                vm.fetchUsers()
+            .task {
+                /*
+                 User .task instead of OnAppear because onAppear is synchronous function and we were trying to achieve asynchronous code inside synchronous code. better use .task modifier comes with swiftui because its allows to kickoff asynchronous task when the view appears and it will automatically handle cancelling tasks for you when the view disappears as well.
+
+                 */
+                  await  vm.fetchUsers()
             }
             .sheet(isPresented: $shouldShowCreate){
                 CreateView {
@@ -58,7 +62,12 @@ struct PeopleView: View {
             }
             .alert(isPresented: $vm.hasError, error: vm.error) {
                 Button("Retry"){
-                    vm.fetchUsers()
+                    /*
+                     Inside button we cannot use .task modifier because we actually saying that when someone taps on it we want to execute the asynchronous funtion so in this situation we use Task
+                     */
+                    Task {
+                        await vm.fetchUsers()
+                    }
                 }
             }
             .overlay {

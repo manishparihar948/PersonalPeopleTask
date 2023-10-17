@@ -14,6 +14,7 @@ struct PeopleView: View {
     @StateObject private var vm = PeopleViewModel()
     @State private var shouldShowCreate = false
     @State private var shouldShowSuccess = false
+    @State private var hasAppeared = false // For refresh the view
     
     var body: some View {
         NavigationStack {
@@ -42,13 +43,19 @@ struct PeopleView: View {
                 ToolbarItem(placement: .primaryAction) {
                     create
                 }
+                ToolbarItem(placement: .navigationBarLeading){
+                    refresh
+                }
             }
             .task {
                 /*
                  User .task instead of OnAppear because onAppear is synchronous function and we were trying to achieve asynchronous code inside synchronous code. better use .task modifier comes with swiftui because its allows to kickoff asynchronous task when the view appears and it will automatically handle cancelling tasks for you when the view disappears as well.
 
                  */
-                  await  vm.fetchUsers()
+                if !hasAppeared {
+                    await  vm.fetchUsers()
+                    hasAppeared = true
+                }
             }
             .sheet(isPresented: $shouldShowCreate){
                 CreateView {
@@ -110,6 +117,17 @@ private extension PeopleView {
                 )
         }
         .disabled(vm.isLoading)
+    }
+    
+    var refresh: some View {
+        Button {
+            Task {
+                await vm.fetchUsers()
+            }
+        } label: {
+            Symbols.refresh
+        }
+        .disabled(vm.isLoading) // When button disable should not load data
     }
     
 }

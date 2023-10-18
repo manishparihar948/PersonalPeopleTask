@@ -36,6 +36,7 @@
 		CD3BF0042ADDE1140027A04C /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */; };
 		CD3BF0062ADDE2A90027A04C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0052ADDE2A80027A04C /* Endpoint.swift */; };
 		CDEF5E5E2ADFD0FF004DDA7E /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */; };
+		CDEF5E612ADFE12D004DDA7E /* CreateFormValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		CD3BF0052ADDE2A80027A04C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CDEF5E532ADFD0D8004DDA7E /* PersonalPeopleAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalPeopleAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperTests.swift; sourceTree = "<group>"; };
+		CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFormValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +368,7 @@
 		CDEF5E542ADFD0D8004DDA7E /* PersonalPeopleAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				CDEF5E5F2ADFE0C2004DDA7E /* Form */,
 				CDEF5E5C2ADFD0EE004DDA7E /* Mapper */,
 			);
 			path = PersonalPeopleAPITests;
@@ -377,6 +380,14 @@
 				CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		CDEF5E5F2ADFE0C2004DDA7E /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDEF5E612ADFE12D004DDA7E /* CreateFormValidatorTests.swift in Sources */,
 				CDEF5E5E2ADFD0FF004DDA7E /* JSONMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

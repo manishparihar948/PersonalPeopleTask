@@ -22,7 +22,8 @@ final class NetworkingManager {
      */
     // Make generic constraint so make request with Type T and Codable
     // We want to actually pass in a type so we allow someone to say the model that they want to map it to within the request function so we are going to say type and want that type to be T.type
-    func request<T: Codable>(_ endpoint: Endpoint,
+    func request<T: Codable>(session: URLSession = .shared,
+                             _ endpoint: Endpoint,
                              type: T.Type) async throws -> T {
 
         // 1. Check if endpoint are valid
@@ -39,7 +40,7 @@ final class NetworkingManager {
         //we are going to await the value so this (it tells the system that something asynchronous is about to happen and
         //it will actually suspend and wait for it to finish)
         */
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await session.data(for: request)
         
         // 4. We access the response to check if its within a valid status code if isnt we going to throw an error
         guard let response = response as? HTTPURLResponse,
@@ -60,14 +61,15 @@ final class NetworkingManager {
     // POST Request - 
     // method overloading two funtions name is same but behave differently
     // Here we don not want return from this function
-    func request(_ endpoint: Endpoint) async throws  {
+    func request(session: URLSession = .shared,
+                 _ endpoint: Endpoint) async throws  {
         guard let url = endpoint.url else {
             throw NetworkingError.invalidUrl
         }
         
         let request = buildRequest(from: url, methodType: endpoint.methodType)
         
-        let (_, response) = try await URLSession.shared.data(for: request)
+        let (_, response) = try await session.data(for: request)
         
         guard let response = response as? HTTPURLResponse,
               (200...300) ~= response.statusCode else {
@@ -84,6 +86,28 @@ extension NetworkingManager {
         case invalidStatusCode(statusCode: Int)
         case invalidData
         case failedToDecode(error: Error)
+    }
+}
+
+// Added this because our NetworkingManagerTest for unsuccessful for 400 got error
+extension NetworkingManager.NetworkingError: Equatable {
+    static func == (lhs: NetworkingManager.NetworkingError, rhs: NetworkingManager.NetworkingError) -> Bool {
+        switch(lhs, rhs) {
+            // compare whoever for case
+        case (.invalidUrl, .invalidUrl):
+            return true
+        case (.custom(let lhsType), .custom(let rhsType)):
+            return lhsType.localizedDescription == rhsType.localizedDescription
+        case (.invalidStatusCode(let lhsType), .invalidStatusCode(let rhsType)):
+            return lhsType == rhsType
+        case (.invalidData, .invalidData):
+            return true
+        case (.failedToDecode(let lhsType), .failedToDecode(let rhsType)):
+            return lhsType.localizedDescription == rhsType.localizedDescription
+        default:
+            return false
+            
+        }
     }
 }
 

@@ -37,6 +37,9 @@
 		CD3BF0062ADDE2A90027A04C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0052ADDE2A80027A04C /* Endpoint.swift */; };
 		CDEF5E5E2ADFD0FF004DDA7E /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */; };
 		CDEF5E612ADFE12D004DDA7E /* CreateFormValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */; };
+		CDEF5E652AE0178D004DDA7E /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E642AE0178D004DDA7E /* NetworkingEndpointTests.swift */; };
+		CDEF5E6A2AE02050004DDA7E /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E692AE02050004DDA7E /* MockURLSessionProtocol.swift */; };
+		CDEF5E6D2AE0280F004DDA7E /* NetworkingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E6C2AE0280F004DDA7E /* NetworkingManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		CDEF5E532ADFD0D8004DDA7E /* PersonalPeopleAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalPeopleAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperTests.swift; sourceTree = "<group>"; };
 		CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFormValidatorTests.swift; sourceTree = "<group>"; };
+		CDEF5E642AE0178D004DDA7E /* NetworkingEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingEndpointTests.swift; sourceTree = "<group>"; };
+		CDEF5E692AE02050004DDA7E /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
+		CDEF5E6C2AE0280F004DDA7E /* NetworkingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +374,7 @@
 		CDEF5E542ADFD0D8004DDA7E /* PersonalPeopleAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				CDEF5E622AE01762004DDA7E /* Networking */,
 				CDEF5E5F2ADFE0C2004DDA7E /* Form */,
 				CDEF5E5C2ADFD0EE004DDA7E /* Mapper */,
 			);
@@ -388,6 +395,40 @@
 				CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */,
 			);
 			path = Form;
+			sourceTree = "<group>";
+		};
+		CDEF5E622AE01762004DDA7E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CDEF5E6B2AE027CC004DDA7E /* NetworkingManager */,
+				CDEF5E662AE01FA8004DDA7E /* Mocks */,
+				CDEF5E632AE0176A004DDA7E /* Endpoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CDEF5E632AE0176A004DDA7E /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				CDEF5E642AE0178D004DDA7E /* NetworkingEndpointTests.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		CDEF5E662AE01FA8004DDA7E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CDEF5E692AE02050004DDA7E /* MockURLSessionProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CDEF5E6B2AE027CC004DDA7E /* NetworkingManager */ = {
+			isa = PBXGroup;
+			children = (
+				CDEF5E6C2AE0280F004DDA7E /* NetworkingManagerTests.swift */,
+			);
+			path = NetworkingManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,8 +564,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDEF5E6D2AE0280F004DDA7E /* NetworkingManagerTests.swift in Sources */,
 				CDEF5E612ADFE12D004DDA7E /* CreateFormValidatorTests.swift in Sources */,
 				CDEF5E5E2ADFD0FF004DDA7E /* JSONMapperTests.swift in Sources */,
+				CDEF5E6A2AE02050004DDA7E /* MockURLSessionProtocol.swift in Sources */,
+				CDEF5E652AE0178D004DDA7E /* NetworkingEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

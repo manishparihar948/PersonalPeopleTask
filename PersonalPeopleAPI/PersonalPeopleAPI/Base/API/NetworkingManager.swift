@@ -7,8 +7,22 @@
 
 import Foundation
 
-// Entire Singleton class
-final class NetworkingManager {
+// Protocol added for Integration Testing
+protocol NetworkingManagerImpl {
+    // We want to move our request here, we take out default .shared ffrom session.
+    func request<T: Codable>(session: URLSession,
+                             _ endpoint: Endpoint,
+                             type: T.Type) async throws -> T
+    
+    func request(session: URLSession,
+                 _ endpoint: Endpoint) async throws
+}
+
+/*
+   Entire Singleton class
+   
+*/
+final class NetworkingManager: NetworkingManagerImpl {
     
     static let shared = NetworkingManager()
     

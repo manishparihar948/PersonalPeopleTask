@@ -21,8 +21,13 @@ final class PeopleViewModel: ObservableObject {
     @Published private(set) var viewState: ViewState?
     @Published var hasError = false
     
-    private var page = 1
-    private var totalPages: Int?
+    // make (set) for integration testing coz w/o it we cannot access page, when we have page = 2,
+    private(set) var page = 1
+    private(set) var totalPages: Int?
+    
+    // For Integration Testing
+    private let networkingManager: NetworkingManagerImpl!
+    
     
     var isLoading: Bool {
         viewState == .loading
@@ -30,6 +35,18 @@ final class PeopleViewModel: ObservableObject {
     
     var isFetching: Bool {
         viewState == .fetching
+    }
+    
+    /**
+    For Integration Testing
+    Why creating this initializer - when we write our unit test, we can actually pass in a mock version of this network manager that doesnt actually
+    connect to a real API which is what we will get it soon and the reason that we are using the protocol here, what we are saying is that any object
+     that implements this protocol we are able to pass it into the constructor. We need to setup  property within this view model that will actually set so
+     we can access the functions within this protocol
+     */
+    init(networkingManager: NetworkingManagerImpl = NetworkingManager.shared) {
+        // Set the type and error of return from initializer goes away
+        self.networkingManager = networkingManager
     }
     
     @MainActor
@@ -46,7 +63,7 @@ final class PeopleViewModel: ObservableObject {
               What we are saying here we want to try to fetch the users response from the users endpoint and
               we are going to await the values so its worth nothing here that we specified the endpoint
              */
-            let response = try await NetworkingManager.shared.request(.people(page: page), type: UsersResponse.self)
+            let response = try await networkingManager.request(session: .shared, .people(page: page), type: UsersResponse.self)
             
             self.totalPages = response.totalPages
         // 5. our users array to the value within our response.data
@@ -75,7 +92,7 @@ final class PeopleViewModel: ObservableObject {
         page += 1
         
         do {
-            let response = try await NetworkingManager.shared.request(.people(page: page), type: UsersResponse.self)
+            let response = try await networkingManager.request(session: .shared, .people(page: page), type: UsersResponse.self)
             self.totalPages = response.totalPages
             self.users += response.data // replacing whole array
         } catch {

@@ -9,7 +9,8 @@ import Foundation
 
 
 // MARK: - UserDetailResponse
-struct UserDetailResponse: Codable {
+// Make Equatable for integration test
+struct UserDetailResponse: Codable, Equatable {
     let data: User
     let support: Support
 }

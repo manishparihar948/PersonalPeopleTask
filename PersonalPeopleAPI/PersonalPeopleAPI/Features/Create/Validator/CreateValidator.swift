@@ -7,7 +7,19 @@
 
 import Foundation
 
-struct CreateValidator {
+/**
+ Protocol Implementation created for Integration Testing
+ */
+protocol CreateValidatorImpl {
+    // Use and get capabilities for and that is our validate function
+    func validate(_ person: NewPerson) throws
+}
+
+/**
+ Now conforn protocol here
+ And we need to update our view model to accept our protocol for our validator and our networking manager so
+ */
+struct CreateValidator: CreateValidatorImpl {
     
     func validate(_ person: NewPerson) throws {
         if person.firstName.isEmpty {

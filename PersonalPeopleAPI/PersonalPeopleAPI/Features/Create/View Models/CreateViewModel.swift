@@ -17,8 +17,24 @@ final class CreateViewModel: ObservableObject {
     @Published private(set) var error: FormError?
     @Published var hasError = false
     
-    // Create instance of createvalidator
-    private let validator = CreateValidator()
+    // Create another constant for our networking manager
+    private let networkingManager: NetworkingManagerImpl!
+    // Create constant of createvalidator
+    private let validator: CreateValidatorImpl!
+  
+    
+    /* 
+     First of all we call initializer and we can pass in any object in
+     that conforms to this protocol
+     And when we write our integration test - we going to use instance of our 
+     networking manager default "NetworkingManager.shared"  and also we going 
+     to use create validator as a default as well "CreateValidator()"
+     */
+    init(networkingManager: NetworkingManagerImpl = NetworkingManager.shared ,
+         validator: CreateValidatorImpl = CreateValidator()) {
+        self.networkingManager = networkingManager
+        self.validator = validator
+    }
     
     @MainActor
     func create() async {
@@ -34,7 +50,7 @@ final class CreateViewModel: ObservableObject {
             encoder.keyEncodingStrategy = .convertToSnakeCase
             let data = try encoder.encode(person)
         // 5. Try to send the data, we dont want function where it actually tries to decode some kind of object when you make a network request instead of that we use alternative function we have in our network manager class that simple execute the request and froze an error if something goes wrong so
-            try await NetworkingManager.shared.request(.create(submissionData: data))
+            try await networkingManager.request(session: .shared, .create(submissionData: data))
         // 6. finally set the state to be successful
             state = .successful
             
@@ -81,6 +97,22 @@ extension CreateViewModel.FormError {
             return err.errorDescription
         case .system(let err):
             return err.localizedDescription
+        }
+    }
+}
+
+// For integration Testing
+extension CreateViewModel.FormError: Equatable {
+    static func == (lhs: CreateViewModel.FormError, rhs: CreateViewModel.FormError) -> Bool {
+        switch (lhs, rhs) {
+        case (.networking(let lhsType), .networking(let  rhsType)):
+            return lhsType.errorDescription == rhsType.errorDescription
+        case (.validation(let lhsType), .validation(let  rhsType)):
+            return lhsType.errorDescription == rhsType.errorDescription
+        case (.system(let lhsType), .system(let  rhsType)):
+            return lhsType.localizedDescription == rhsType.localizedDescription
+        default :
+            return false
         }
     }
 }

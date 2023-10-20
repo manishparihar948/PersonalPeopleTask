@@ -5,6 +5,11 @@
 //  Created by Manish Parihar on 19.10.23.
 //
 
+#if DEBUG
+/**
+ Because of making global use of this testing class we need to Change Target Membership
+ And comment @testable import PersonalPeopleAPI
+ */
 import Foundation
 @testable import PersonalPeopleAPI
 
@@ -20,3 +25,5 @@ class NetworkingManagerUserResponseFailureMock: NetworkingManagerImpl {
     
     
 }
+
+#endif

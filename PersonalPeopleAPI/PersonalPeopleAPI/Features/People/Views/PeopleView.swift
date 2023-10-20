@@ -11,10 +11,36 @@ struct PeopleView: View {
     
     private let columns = Array(repeating: GridItem(.flexible()), count: 2)
     
-    @StateObject private var vm = PeopleViewModel()
+    // Instead of this follow below line because we want to change what view model and dependency injection within it.
+    // @StateObject private var vm = PeopleViewModel()
+    @StateObject private var vm: PeopleViewModel
     @State private var shouldShowCreate = false
     @State private var shouldShowSuccess = false
     @State private var hasAppeared = false // For refresh the view
+    
+    /*
+     Custom initializer for UITest
+     */
+    init() {
+        #if DEBUG
+        /* 
+         Write UITesting logic here else write below for default to the standard
+         view model, people view model with its default dependencies.
+         */
+        if UITestingHelper.isUITesting {
+            // What mock injected in this view model and make mock as NetworkingManagerImpl to avoid error
+            let mock: NetworkingManagerImpl = UITestingHelper.isNetworkingSuccessful ? NetworkingManagerUserResponseSuccessMock() : NetworkingManagerUserResponseFailureMock()
+            
+            _vm = StateObject(wrappedValue: PeopleViewModel(networkingManager: mock))
+        } else {
+            _vm = StateObject(wrappedValue: PeopleViewModel())
+        }
+        #else
+            // we have to use by underscore, running for appstore or test flight and create state object
+            _vm = StateObject(wrappedValue: PeopleViewModel())
+        #endif
+    }
+    
     
     var body: some View {
         NavigationStack {
@@ -31,6 +57,7 @@ struct PeopleView: View {
                                     DetailView(userId: user.id)
                                 } label: {
                                     PersonItemView(user: user)
+                                        .accessibilityIdentifier("item_\(user.id)") // UITesting
                                         .task {
                                             if vm.hasReachedEnd(of: user) && !vm.isFetching {
                                                 await vm.fetchNextSetOfUsers()
@@ -40,6 +67,7 @@ struct PeopleView: View {
                             }
                         }
                         .padding()
+                        .accessibilityIdentifier("peopleGrid") // For UITesting
                     }
                     .overlay(alignment: .bottom) {
                         if vm.isFetching {
@@ -60,7 +88,7 @@ struct PeopleView: View {
             .task {
                 /*
                  User .task instead of OnAppear because onAppear is synchronous function and we were trying to achieve asynchronous code inside synchronous code. better use .task modifier comes with swiftui because its allows to kickoff asynchronous task when the view appears and it will automatically handle cancelling tasks for you when the view disappears as well.
-
+                 
                  */
                 if !hasAppeared {
                     await  vm.fetchUsers()
@@ -69,7 +97,7 @@ struct PeopleView: View {
             }
             .sheet(isPresented: $shouldShowCreate){
                 CreateView {
-                    // For vibrate 
+                    // For vibrate
                     haptic(.success)
                     // Start here animation view
                     withAnimation(.spring().delay(0.25)){

@@ -5,10 +5,15 @@
 //  Created by Manish Parihar on 20.10.23.
 //
 
+#if DEBUG
 import Foundation
 
+/**
+ Because of making global use of this testing class we need to Change Target Membership
+ And comment @testable import PersonalPeopleAPI
+ */
 // Then add testable project
-@testable import PersonalPeopleAPI
+//@testable import PersonalPeopleAPI
 
 struct CreateValidatorSuccessMock: CreateValidatorImpl  {
     /*
@@ -20,3 +25,5 @@ struct CreateValidatorSuccessMock: CreateValidatorImpl  {
     
     
 }
+
+#endif

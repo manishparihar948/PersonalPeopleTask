@@ -5,8 +5,13 @@
 //  Created by Manish Parihar on 19.10.23.
 //
 
+#if DEBUG
 import Foundation
-@testable import PersonalPeopleAPI
+/**
+ Because of making global use of this testing class we need to Change Target Membership
+ And comment @testable import PersonalPeopleAPI
+ */
+//@testable import PersonalPeopleAPI
 
 /**
  This class is going to implement the protocol we created before
@@ -28,3 +33,5 @@ class NetworkingManagerUserResponseSuccessMock: NetworkingManagerImpl {
     
     
 }
+
+#endif

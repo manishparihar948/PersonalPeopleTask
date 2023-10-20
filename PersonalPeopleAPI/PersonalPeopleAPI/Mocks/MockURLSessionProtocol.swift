@@ -5,8 +5,14 @@
 //  Created by Manish Parihar on 18.10.23.
 //
 
+#if DEBUG
 import Foundation
-import XCTest
+/**
+ Because of making global use of this testing class we need to Change Target Membership
+ And comment @testable import PersonalPeopleAPI
+ import XCTest
+ */
+//import XCTest
 
 // This URLProtocol allows us to actually control, how our data is going to be loaded when we want to use some kind of request with our network manager url
 class MockURLSessionProtocol: URLProtocol {
@@ -47,8 +53,7 @@ class MockURLSessionProtocol: URLProtocol {
      */
     override func startLoading() {
         guard let handler = MockURLSessionProtocol.loadingHandler else {
-            XCTFail("Loading handler is not set.")
-            return
+            fatalError("Loading handler is not set.")
         }
         
         let (response, data) = handler()
@@ -83,3 +88,5 @@ class MockURLSessionProtocol: URLProtocol {
         
     }
 }
+
+#endif

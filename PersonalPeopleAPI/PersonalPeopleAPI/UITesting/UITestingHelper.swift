@@ -39,8 +39,14 @@ struct UITestingHelper {
     }
     
     // Create new property for networking successful
-    static var isNetworkingSuccessful: Bool {
-        ProcessInfo.processInfo.environment["-networking-success"] == "1"
+    // Refactor and rename from isNetworkingSuccessful to isPeopleNetworkingSuccessful for UItest
+    static var isPeopleNetworkingSuccessful: Bool {
+        ProcessInfo.processInfo.environment["-people-networking-success"] == "1"
+    }
+    
+    // For Detail View
+    static var isDetailsNetworkingSuccessful: Bool {
+        ProcessInfo.processInfo.environment["-details-networking-success"] == "1"
     }
     
     

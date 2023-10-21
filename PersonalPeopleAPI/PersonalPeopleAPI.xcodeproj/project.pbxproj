@@ -22,6 +22,7 @@
 		CD18F19D2AE2CE1B004535AD /* CreateValidatorSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E882AE279A5004DDA7E /* CreateValidatorSuccessMock.swift */; };
 		CD18F19E2AE2CE34004535AD /* CreateValidatorFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18F1772AE2B5B1004535AD /* CreateValidatorFailureMock.swift */; };
 		CD18F1A02AE2DA46004535AD /* PeopleFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18F19F2AE2DA46004535AD /* PeopleFailureUITests.swift */; };
+		CD18F1A32AE39618004535AD /* DetailsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18F1A22AE39618004535AD /* DetailsUITests.swift */; };
 		CD3BEFAC2AD73B720027A04C /* PersonalPeopleAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFAB2AD73B720027A04C /* PersonalPeopleAPIApp.swift */; };
 		CD3BEFAE2AD73B720027A04C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BEFAD2AD73B720027A04C /* ContentView.swift */; };
 		CD3BEFB02AD73B780027A04C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3BEFAF2AD73B780027A04C /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		CD3BF0012ADDDF570027A04C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0002ADDDF570027A04C /* SettingsView.swift */; };
 		CD3BF0042ADDE1140027A04C /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */; };
 		CD3BF0062ADDE2A90027A04C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0052ADDE2A80027A04C /* Endpoint.swift */; };
+		CDC727462AE39FED005B196C /* DetailsFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC727452AE39FED005B196C /* DetailsFailureUITests.swift */; };
 		CDEF5E5E2ADFD0FF004DDA7E /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */; };
 		CDEF5E612ADFE12D004DDA7E /* CreateFormValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */; };
 		CDEF5E652AE0178D004DDA7E /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E642AE0178D004DDA7E /* NetworkingEndpointTests.swift */; };
@@ -87,6 +89,7 @@
 		CD18F18F2AE2BDB6004535AD /* PeopleScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleScreenUITests.swift; sourceTree = "<group>"; };
 		CD18F1922AE2C1F0004535AD /* UITestingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingHelper.swift; sourceTree = "<group>"; };
 		CD18F19F2AE2DA46004535AD /* PeopleFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleFailureUITests.swift; sourceTree = "<group>"; };
+		CD18F1A22AE39618004535AD /* DetailsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUITests.swift; sourceTree = "<group>"; };
 		CD3BEFA82AD73B720027A04C /* PersonalPeopleAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalPeopleAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3BEFAB2AD73B720027A04C /* PersonalPeopleAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPeopleAPIApp.swift; sourceTree = "<group>"; };
 		CD3BEFAD2AD73B720027A04C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		CD3BF0002ADDDF570027A04C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		CD3BF0052ADDE2A80027A04C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CDC727452AE39FED005B196C /* DetailsFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFailureUITests.swift; sourceTree = "<group>"; };
 		CDEF5E532ADFD0D8004DDA7E /* PersonalPeopleAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalPeopleAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperTests.swift; sourceTree = "<group>"; };
 		CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFormValidatorTests.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 		CD18F1842AE2BC89004535AD /* PersonalPeopleAPIUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CD18F1A12AE395FE004535AD /* Details */,
 				CD18F18E2AE2BD8E004535AD /* People */,
 			);
 			path = PersonalPeopleAPIUITests;
@@ -204,6 +209,15 @@
 				CD18F1772AE2B5B1004535AD /* CreateValidatorFailureMock.swift */,
 			);
 			path = Create;
+			sourceTree = "<group>";
+		};
+		CD18F1A12AE395FE004535AD /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CD18F1A22AE39618004535AD /* DetailsUITests.swift */,
+				CDC727452AE39FED005B196C /* DetailsFailureUITests.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		CD3BEF9F2AD73B720027A04C = {
@@ -716,6 +730,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD18F1902AE2BDB6004535AD /* PeopleScreenUITests.swift in Sources */,
+				CDC727462AE39FED005B196C /* DetailsFailureUITests.swift in Sources */,
+				CD18F1A32AE39618004535AD /* DetailsUITests.swift in Sources */,
 				CD18F1A02AE2DA46004535AD /* PeopleFailureUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,7 @@ final class PeopleScreenUITests: XCTestCase {
          we want to use within our application so what so what we going to do here is networking.["-networking-success":"1"]
          */
         app.launchArguments = ["-ui-testing"]
-        app.launchEnvironment = ["-networking-success":"1"]
+        app.launchEnvironment = ["-people-networking-success":"1"]
         // then launch
         app.launch()
     }

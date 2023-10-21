@@ -29,7 +29,7 @@ struct PeopleView: View {
          */
         if UITestingHelper.isUITesting {
             // What mock injected in this view model and make mock as NetworkingManagerImpl to avoid error
-            let mock: NetworkingManagerImpl = UITestingHelper.isNetworkingSuccessful ? NetworkingManagerUserResponseSuccessMock() : NetworkingManagerUserResponseFailureMock()
+            let mock: NetworkingManagerImpl = UITestingHelper.isPeopleNetworkingSuccessful ? NetworkingManagerUserResponseSuccessMock() : NetworkingManagerUserResponseFailureMock()
             
             _vm = StateObject(wrappedValue: PeopleViewModel(networkingManager: mock))
         } else {

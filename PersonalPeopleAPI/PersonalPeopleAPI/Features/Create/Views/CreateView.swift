@@ -39,7 +39,7 @@ struct CreateView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        // NavigationStack {
             Form {
                 
                 Section {
@@ -75,12 +75,13 @@ struct CreateView: View {
             }
             .alert(isPresented: $vm.hasError,
                    error: vm.error) { }
-                .overlay {
-                    if vm.state == .submitting {
-                        ProgressView()
-                    }
+            .overlay {
+                if vm.state == .submitting {
+                    ProgressView()
                 }
-        }
+            }
+            .embedInNavigation()
+        //}
     }
 }
 

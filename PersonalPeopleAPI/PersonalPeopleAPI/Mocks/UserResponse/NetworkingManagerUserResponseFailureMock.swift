@@ -11,7 +11,7 @@
  And comment @testable import PersonalPeopleAPI
  */
 import Foundation
-@testable import PersonalPeopleAPI
+// @testable import PersonalPeopleAPI
 
 class NetworkingManagerUserResponseFailureMock: NetworkingManagerImpl {
     

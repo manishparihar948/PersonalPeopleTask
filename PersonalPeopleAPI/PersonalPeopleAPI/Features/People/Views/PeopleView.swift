@@ -43,7 +43,8 @@ struct PeopleView: View {
     
     
     var body: some View {
-        NavigationStack {
+        // Deleting NavigationStack because we have View+Navigation in Base Folder
+        // NavigationStack {
             ZStack {
                 background
                 
@@ -68,6 +69,9 @@ struct PeopleView: View {
                         }
                         .padding()
                         .accessibilityIdentifier("peopleGrid") // For UITesting
+                    }
+                    .refreshable {
+                        await vm.fetchUsers()
                     }
                     .overlay(alignment: .bottom) {
                         if vm.isFetching {
@@ -128,7 +132,8 @@ struct PeopleView: View {
                         }
                 }
             }
-        }
+            .embedInNavigation()
+        //}
     }
 }
 

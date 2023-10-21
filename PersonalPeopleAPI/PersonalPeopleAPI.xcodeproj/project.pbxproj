@@ -56,6 +56,7 @@
 		CDC7274B2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7274A2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift */; };
 		CDC7274D2AE3C0EB005B196C /* CreateFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7274C2AE3C0EB005B196C /* CreateFailureUITests.swift */; };
 		CDC7274F2AE3C362005B196C /* CreateScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7274E2AE3C362005B196C /* CreateScreenUITests.swift */; };
+		CDC727522AE3D17E005B196C /* View+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC727512AE3D17E005B196C /* View+Navigation.swift */; };
 		CDEF5E5E2ADFD0FF004DDA7E /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */; };
 		CDEF5E612ADFE12D004DDA7E /* CreateFormValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */; };
 		CDEF5E652AE0178D004DDA7E /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E642AE0178D004DDA7E /* NetworkingEndpointTests.swift */; };
@@ -129,6 +130,7 @@
 		CDC7274A2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenFormValidationTests.swift; sourceTree = "<group>"; };
 		CDC7274C2AE3C0EB005B196C /* CreateFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFailureUITests.swift; sourceTree = "<group>"; };
 		CDC7274E2AE3C362005B196C /* CreateScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenUITests.swift; sourceTree = "<group>"; };
+		CDC727512AE3D17E005B196C /* View+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Navigation.swift"; sourceTree = "<group>"; };
 		CDEF5E532ADFD0D8004DDA7E /* PersonalPeopleAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalPeopleAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperTests.swift; sourceTree = "<group>"; };
 		CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFormValidatorTests.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		CD3BEFBE2AD73F6B0027A04C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CDC727502AE3D160005B196C /* Extensions */,
 				CD3BF0022ADDE0EB0027A04C /* UserDefaults */,
 				CD3BEFFD2ADDDBB00027A04C /* Haptics */,
 				CD3BEFED2AD95C000027A04C /* API */,
@@ -504,6 +507,14 @@
 				CDC7274E2AE3C362005B196C /* CreateScreenUITests.swift */,
 			);
 			path = Create;
+			sourceTree = "<group>";
+		};
+		CDC727502AE3D160005B196C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CDC727512AE3D17E005B196C /* View+Navigation.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CDEF5E542ADFD0D8004DDA7E /* PersonalPeopleAPITests */ = {
@@ -765,6 +776,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3BEFDF2AD7FD670027A04C /* StaticJSONMapper.swift in Sources */,
+				CDC727522AE3D17E005B196C /* View+Navigation.swift in Sources */,
 				CD18F19D2AE2CE1B004535AD /* CreateValidatorSuccessMock.swift in Sources */,
 				CD18F1992AE2CD28004535AD /* NetworkingManagerUserDetailsResponseFailureMock.swift in Sources */,
 				CD3BEFEA2AD83A6B0027A04C /* DetailView.swift in Sources */,

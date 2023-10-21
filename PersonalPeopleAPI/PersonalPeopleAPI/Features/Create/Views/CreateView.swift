@@ -13,7 +13,30 @@ struct CreateView: View {
     @Environment(\.dismiss) var dismiss
     @FocusState private var focusedField: Field? // to make textfield not active
     @StateObject private var vm = CreateViewModel()
-    let successfulAction: () -> Void // Create closure
+   
+    // Also make this lock as private
+    private let successfulAction: () -> Void // Create closure
+    
+    // Create initializer for UITest
+    init(successfulAction: @escaping () -> Void) {
+        self.successfulAction = successfulAction
+        
+        #if DEBUG
+        if UITestingHelper.isUITesting {
+            let mock : NetworkingManagerImpl = UITestingHelper.isCreateNetworkingSuccessful ?
+            NetworkingManagerCreateSuccessMock() : NetworkingManagerCreateFailureMock()
+            _vm = StateObject(wrappedValue: CreateViewModel(networkingManager: mock))
+
+        } else {
+            _vm = StateObject(wrappedValue: CreateViewModel())
+
+        }
+        
+        #else
+        _vm = StateObject(wrappedValue: CreateViewModel())
+            
+        #endif
+    }
     
     var body: some View {
         NavigationStack {
@@ -79,22 +102,26 @@ private extension CreateView {
         Button("Done") {
             dismiss()
         }
+        .accessibilityIdentifier("doneBtn") // For UITesting
     }
     
     var firstname: some View {
         TextField("First Name",text: $vm.person.firstName)
             .focused($focusedField, equals: .firstName)
+            .accessibilityIdentifier("firstNameTxtField") // For UITesting
     }
     
     var lastname: some View {
         TextField("Last Name",text: $vm.person.lastName)
             .focused($focusedField, equals: .lastName)
+            .accessibilityIdentifier("lastNameTxtField") // For UITesting
 
     }
     
     var job: some View {
         TextField("Job",text: $vm.person.job)
             .focused($focusedField, equals: .job)
+            .accessibilityIdentifier("jobTxtField") // For UITesting
 
     }
     
@@ -106,5 +133,6 @@ private extension CreateView {
 
             }
         }
+        .accessibilityIdentifier("submitBtn") // For UITesting
     }
 }

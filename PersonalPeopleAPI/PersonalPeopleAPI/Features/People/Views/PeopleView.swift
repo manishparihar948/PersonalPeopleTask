@@ -155,6 +155,7 @@ private extension PeopleView {
                 )
         }
         .disabled(vm.isLoading)
+        .accessibilityIdentifier("createBtn") // For UITesting
     }
     
     var refresh: some View {

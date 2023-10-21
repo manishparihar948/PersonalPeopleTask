@@ -52,6 +52,10 @@
 		CD3BF0042ADDE1140027A04C /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */; };
 		CD3BF0062ADDE2A90027A04C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF0052ADDE2A80027A04C /* Endpoint.swift */; };
 		CDC727462AE39FED005B196C /* DetailsFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC727452AE39FED005B196C /* DetailsFailureUITests.swift */; };
+		CDC727492AE3B918005B196C /* CreateScreenUIValidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC727482AE3B918005B196C /* CreateScreenUIValidTests.swift */; };
+		CDC7274B2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7274A2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift */; };
+		CDC7274D2AE3C0EB005B196C /* CreateFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7274C2AE3C0EB005B196C /* CreateFailureUITests.swift */; };
+		CDC7274F2AE3C362005B196C /* CreateScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC7274E2AE3C362005B196C /* CreateScreenUITests.swift */; };
 		CDEF5E5E2ADFD0FF004DDA7E /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */; };
 		CDEF5E612ADFE12D004DDA7E /* CreateFormValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */; };
 		CDEF5E652AE0178D004DDA7E /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF5E642AE0178D004DDA7E /* NetworkingEndpointTests.swift */; };
@@ -121,6 +125,10 @@
 		CD3BF0032ADDE1140027A04C /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		CD3BF0052ADDE2A80027A04C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CDC727452AE39FED005B196C /* DetailsFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFailureUITests.swift; sourceTree = "<group>"; };
+		CDC727482AE3B918005B196C /* CreateScreenUIValidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenUIValidTests.swift; sourceTree = "<group>"; };
+		CDC7274A2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenFormValidationTests.swift; sourceTree = "<group>"; };
+		CDC7274C2AE3C0EB005B196C /* CreateFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFailureUITests.swift; sourceTree = "<group>"; };
+		CDC7274E2AE3C362005B196C /* CreateScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenUITests.swift; sourceTree = "<group>"; };
 		CDEF5E532ADFD0D8004DDA7E /* PersonalPeopleAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalPeopleAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEF5E5D2ADFD0FF004DDA7E /* JSONMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperTests.swift; sourceTree = "<group>"; };
 		CDEF5E602ADFE12D004DDA7E /* CreateFormValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFormValidatorTests.swift; sourceTree = "<group>"; };
@@ -167,6 +175,7 @@
 		CD18F1842AE2BC89004535AD /* PersonalPeopleAPIUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CDC727472AE3B8BD005B196C /* Create */,
 				CD18F1A12AE395FE004535AD /* Details */,
 				CD18F18E2AE2BD8E004535AD /* People */,
 			);
@@ -486,6 +495,17 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		CDC727472AE3B8BD005B196C /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				CDC727482AE3B918005B196C /* CreateScreenUIValidTests.swift */,
+				CDC7274A2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift */,
+				CDC7274C2AE3C0EB005B196C /* CreateFailureUITests.swift */,
+				CDC7274E2AE3C362005B196C /* CreateScreenUITests.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
 		CDEF5E542ADFD0D8004DDA7E /* PersonalPeopleAPITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,9 +749,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC727492AE3B918005B196C /* CreateScreenUIValidTests.swift in Sources */,
+				CDC7274F2AE3C362005B196C /* CreateScreenUITests.swift in Sources */,
 				CD18F1902AE2BDB6004535AD /* PeopleScreenUITests.swift in Sources */,
+				CDC7274B2AE3BE9C005B196C /* CreateScreenFormValidationTests.swift in Sources */,
 				CDC727462AE39FED005B196C /* DetailsFailureUITests.swift in Sources */,
 				CD18F1A32AE39618004535AD /* DetailsUITests.swift in Sources */,
+				CDC7274D2AE3C0EB005B196C /* CreateFailureUITests.swift in Sources */,
 				CD18F1A02AE2DA46004535AD /* PeopleFailureUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

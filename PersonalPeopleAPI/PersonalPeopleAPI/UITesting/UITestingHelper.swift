@@ -49,7 +49,10 @@ struct UITestingHelper {
         ProcessInfo.processInfo.environment["-details-networking-success"] == "1"
     }
     
-    
+    // For CreateView
+    static var isCreateNetworkingSuccessful: Bool {
+        ProcessInfo.processInfo.environment["-create-networking-success"] == "1"
+    }
 }
 
 #endif
